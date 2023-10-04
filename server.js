@@ -14,10 +14,10 @@ app.use(bodyParser.json());
 // const MongoClient = mongodb.MongoClient;
 
 // const uri = "mongodb+srv://preet_25:KGlxuO7SXzkDr8U@cluster0.cdk9bll.mongodb.net/Veer_Project?retryWrites=true&w=majority";
-const port = '3000'
-username = 'veer_14'
-password = 'veermehta'
-database = 'Veer_Project'
+const port = process.env.PORT;
+const username = process.env.MONGODB_USERNAME;
+const password = process.env.MONGODB_PASSWORD;
+const database = process.env.MONGODB_DATABASE;
 
 const templatPath = path.join(__dirname,"/views");
 console.log(templatPath);
