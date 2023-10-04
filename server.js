@@ -28,22 +28,6 @@ const uri = 'mongodb+srv://' + username + ':' + password + '@cluster0.cdk9bll.mo
 
 let db;
 
-// MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
-//   if (err) {
-//     console.error('Error connecting to MongoDB:', err);
-//     return;
-//   }
-
-//   db = client.db('your_database_name');
-//   console.log('Connected to MongoDB');
-
-//   // Start your Express server here
-//   app.listen(port, () => {
-//     console.log(`Server is running on port ${port}`);
-//     console.log(`Link : ` + `localhost:${port}`);
-//   });
-// });
-
 mongoose.connect(uri, { 
   useNewUrlParser: true,useUnifiedTopology:true }
   ).then(()=>{
@@ -53,21 +37,7 @@ mongoose.connect(uri, {
 });
 
 
-// app.get('/api/data', async (req, res) => {
-//     try {
-//       const data = await database.collection('your_collection_name').find().toArray();
-//       res.json(data);
-//     } catch (error) {
-//       console.error('Error fetching data:', error);
-//       res.status(500).json({ error: 'Internal Server Error' });
-//     }
-//   });
-
-
 app.get('/', (req, res) => {
-  // res.send('Hello, World!');
-  // console.log(__dirname + '/views/index.html');
-  // res.sendFile(__dirname + '/views/index.html');
   res.render('index');
 });
 
@@ -117,9 +87,6 @@ app.post('/buy',  (req, res) => {
 });
 
 app.get('/buy', (req, res) => {
-  // res.send('Hello, World!');
-  // console.log(__dirname + '/views/index.html');
-  // res.sendFile(__dirname + '/views/index.html');
   res.render('buy');
 });
 
@@ -151,9 +118,6 @@ app.post('/sell',  (req, res) => {
 
 
 app.get('/sell', (req, res) => {
-  // res.send('Hello, World!');
-  // console.log(__dirname + '/views/index.html');
-  // res.sendFile(__dirname + '/views/index.html');
   res.render('sell');
 });
 
