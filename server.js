@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require("path");
 const app = express();
@@ -5,15 +7,11 @@ const mongoose = require('mongoose');
 const hbs = require("hbs");
 const bodyParser = require('body-parser');
 
-// const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-// const MongoClient = mongodb.MongoClient;
-
-// const uri = "mongodb+srv://preet_25:KGlxuO7SXzkDr8U@cluster0.cdk9bll.mongodb.net/Veer_Project?retryWrites=true&w=majority";
 const port = process.env.PORT;
 const username = process.env.MONGODB_USERNAME;
 const password = process.env.MONGODB_PASSWORD;
