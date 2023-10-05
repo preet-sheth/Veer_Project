@@ -12,15 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-// const port = process.env.PORT;
-// const username = process.env.MONGODB_USERNAME;
-// const password = process.env.MONGODB_PASSWORD;
-// const database = process.env.MONGODB_DATABASE;
+const port = process.env.PORT;
+const username = process.env.MONGODB_USERNAME;
+const password = process.env.MONGODB_PASSWORD;
+const database = process.env.MONGODB_DATABASE;
 
-const port = '3000';
-const username = 'veer_14';
-const password = 'veermehta';
-const database = 'Veer_Project';
+// const port = '3000';
+// const username = 'veer_14';
+// const password = 'veermehta';
+// const database = 'Veer_Project';
 
 const templatPath = path.join(__dirname,"/views");
 console.log(templatPath);
