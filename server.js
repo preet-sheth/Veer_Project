@@ -29,7 +29,8 @@ app.set('view engine','hbs');
 app.set('views',templatPath);
 
 
-const uri = 'mongodb+srv://' + username + ':' + password + '@cluster0.cdk9bll.mongodb.net/' + database + '?retryWrites=true&w=majority';
+// const uri = 'mongodb+srv://' + username + ':' + password + '@cluster0.cdk9bll.mongodb.net/' + database + '?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://' + username + ':' + password + '@cluster0.ioosqjw.mongodb.net/' + database + '?retryWrites=true&w=majority';
 
 let db;
 
