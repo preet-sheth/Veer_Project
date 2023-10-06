@@ -48,6 +48,7 @@ const buySchema = new mongoose.Schema({
   grade: String,
   textbooks: String,
   compiled_papers: String
+
 });
 
 const sellSchema = new mongoose.Schema({
@@ -55,7 +56,8 @@ const sellSchema = new mongoose.Schema({
   phone: String,
   grade: String,
   textbooks: String,
-  compiled_papers: String
+  compiled_papers: String,
+  date_time: Date
 });
 
 const Buyers = mongoose.model('Buyers', buySchema);
@@ -64,19 +66,22 @@ const Sellers = mongoose.model('Sellers', sellSchema);
 app.post('/buy',  (req, res) => {
   // Create a new user based on the request body 
 
+  var dt=new Date()
+  
   const entry = new Buyers({
     name: req.body.name,
     phone: req.body.phone,
     grade: req.body.grade,
     textbooks: req.body.textbooks,
-    compiled_papers: req.body.compiled_papers
-
+    compiled_papers: req.body.compiled_papers,
+    date_time: dt
   });
 
   console.log('Performing buy task');
 
     entry.save().then(() => {
       console.log('Entry saved successfully');
+
       // mongoose.connection.close();
     })
     .catch(err => {
