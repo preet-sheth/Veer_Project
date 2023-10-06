@@ -47,7 +47,8 @@ const buySchema = new mongoose.Schema({
   phone: String,
   grade: String,
   textbooks: String,
-  compiled_papers: String
+  compiled_papers: String,
+  date_time: Date
 
 });
 
@@ -67,7 +68,7 @@ app.post('/buy',  (req, res) => {
   // Create a new user based on the request body 
 
   var dt=new Date()
-  
+
   const entry = new Buyers({
     name: req.body.name,
     phone: req.body.phone,
@@ -104,8 +105,8 @@ app.post('/sell',  (req, res) => {
     phone: req.body.phone,
     grade: req.body.grade,
     textbooks: req.body.textbooks,
-    compiled_papers: req.body.compiled_papers
-
+    compiled_papers: req.body.compiled_papers,
+    date_time: dt
   });
 
   console.log('Performing sell task');
